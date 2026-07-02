@@ -2,7 +2,7 @@
 
 This project tests whether public digital signals can help retailers anticipate category demand before changes appear in conventional sales reporting.
 
-The original coursework asked whether Google Trends search interest and news sentiment could serve as leading indicators for food and beverage retail demand. This staged portfolio version frames the project around state-level food and beverage retail sales from FRED / US Census data, combined with Google Trends and VADER-scored news sentiment.
+The project examines whether Google Trends search interest and news sentiment can serve as leading indicators for food and beverage retail demand. It uses state-level food and beverage retail sales from FRED / US Census data, combined with Google Trends and VADER-scored news sentiment.
 
 ## Problem
 
@@ -39,7 +39,7 @@ The project found that 133 out of 490 keyword-state pairs, or 27.1%, showed Goog
 
 The strongest composite demand signals in the submitted report were:
 
-| Rank | Keyword | Composite Score | Portfolio Interpretation |
+| Rank | Keyword | Composite Score | Interpretation |
 |---:|---|---:|---|
 | 1 | Cold brew coffee | 0.5772 | Highest combined trend and sentiment signal |
 | 2 | Energy drink | 0.5161 | Strong incumbent category signal |
@@ -57,11 +57,11 @@ The report also found meaningful regional signals: electrolyte drinks indexed st
 pip install -r requirements.txt
 ```
 
-2. Add API keys as environment variables:
+2. Add API keys as environment variables. In PowerShell:
 
-```bash
-FRED_API_KEY=your_fred_key
-NEWS_API_KEY=your_newsapi_key
+```powershell
+$env:FRED_API_KEY = "your_fred_key"
+$env:NEWS_API_KEY = "your_newsapi_key"
 ```
 
 3. Run the notebook scaffold:
@@ -70,7 +70,7 @@ NEWS_API_KEY=your_newsapi_key
 notebooks/retail_demand_signal_forecasting.ipynb
 ```
 
-The notebook is staged as a clean public scaffold. The original submitted notebook did not contain the full analysis pipeline, so the report currently serves as the verified source of results.
+The notebook is a clean public scaffold. The original submitted notebook did not contain the full analysis pipeline, so the report currently serves as the verified source of results.
 
 ## Limitations
 
@@ -79,7 +79,3 @@ The notebook is staged as a clean public scaffold. The original submitted notebo
 - NewsAPI coverage depends on API plan, query windows, and article availability.
 - The analysis identifies leading associations, not causal proof.
 - Retail sales are category-level proxies, not item-level POS data.
-
-## Portfolio Framing
-
-This is best presented as a public-signal demand sensing project: a lightweight analytics framework that combines search behavior, text sentiment, and official retail sales data to identify early category demand signals.
